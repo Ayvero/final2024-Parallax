@@ -1,0 +1,180 @@
+.body1 {
+    overflow-y: hidden;
+  }
+  
+  #wrapper {
+    position:relative;
+    /* The image used */
+    background-image: url("https://www.wallpaperflare.com/static/757/698/338/horizon-planets-earth-hd-wallpaper.jpg");
+    overflow-x: hidden;
+    z-index: 0;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    top: 1500px;
+    background-color: rgba(230, 218, 230, .5);
+    padding: 25px;
+    box-sizing: border-box;
+    box-shadow: 100px 5px 25px #333; 
+  }
+  
+  p {
+    position:relative;
+    left: 30%;
+    width: 40%;
+    height: 10%;
+    font-size: 1rem;
+  }
+  
+  #paralx0,#paralx1,#paralx2 {
+    position: absolute;
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 390px;
+    box-shadow: 10px 5px 25px #333;
+    color: #fff;
+  }
+  
+  #paralx0 {
+    background-color: #01579b;
+    top: 1800px;
+    left: 45%;
+    z-index: 22;
+  }
+  
+  #paralx1 {
+    background-color: #4f83cc;
+    top: 1200px;
+    left: 55%;
+    z-index: 21;
+  }
+  #paralx2 {
+    background-color: #002f6c;
+    top: 900px;
+    left: 25%;
+    z-index: 20;
+  }
+
+
+
+  /*==================mouse moving==============*/
+
+  .body{
+    margin: 0;
+    background-color: #1d1e22;
+  }
+  #parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/depth-3.png), url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/depth-2.png), url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/depth-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 50% 50%;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Arial";
+    text-transform: uppercase;
+    opacity: .2;
+    font-size: 70px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+
+  /*================0sprintsheet=====================*/
+
+  /* Eliminamos márgenes y ponemos fondo de página negro */
+.body2 {
+    margin:0;
+    background:#000;
+  }
+  
+  /* Bernard Bernoulli: Animación del personaje */
+  #bern {
+    /*Tamañodelaviñetaindividual*/
+    width:112px;
+    height:156px;
+    /*Cómohayestablecidountamaño,centramosconmargin:;
+    auto*/
+    margin:auto;
+    /*Cargamoselsprite(elrepeat-xsepuedeomitir,pordefectoserepite)*/
+    background:
+    url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/bernard-sprite.png)
+     repeat-x;
+    /*Aplicamoslaanimación"walk":;
+    0.8seg,6viñetasyrepetimosinfinitamente*/
+    animation:walk .8s steps(6) infinite;
+    /*Posicionamoselpersonajesobreelcaminodemadera*/
+    position:relative;
+    bottom:34px;
+    -webkit-animation:walk .8s steps(6) infinite;
+}
+  
+  /* Animación de personaje caminando: Simplemente mueve el sprite sheet hacia la izquierda, realizando el movimiento. */
+  @keyframes walk {
+    /* Partimos de la primera viñeta del sprite sheet */
+    0% { background-position:0 }
+    /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
+    100% { background-position:-672px }
+  }
+  
+  /* Animación del cielo. Efecto "Parallax", va más lento que el mar. */
+  #sky {
+    background:url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/monkey-sky.png) repeat-X;
+    animation: movebg 9s linear infinite;
+  }
+  
+  /* Animación del mar. */
+  #sea {
+    background:
+    url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/monkey-sea.png) repeat-x;
+    animation: movebg 6s linear infinite;
+    /*Posicionamoselmar,paraquenosolapealcielo*/position:relative;
+    top:145px;
+    /*Pequeñodegradadointeriorparasuavizarelmar.Puedeconsumirmuchosrecursos*/box-shadow:10px 10px 45px RGBA(0,0,0, 0.85) inset;
+    -webkit-animation: movebg 6s linear infinite;
+}
+  
+  /* Animación para mover cielo y mar */
+  @keyframes movebg {
+    0% { background-position:550px } 
+    100% { background-position:0 }
+  }
+  
+  /* OPCIONAL: Guybrush */
+  #gb {
+    width:104px;
+    height:150px;
+    background:url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/monkey-guybrush.png) no-repeat;
+    animation:gbwalk 1s steps(6) infinite;
+    margin:auto;
+    position:relative;
+    top:34px;
+    /* Ojo, muy costoso en rendimiento */
+    /* filter:drop-shadow(5px 5px 5px #000); */
+  }
+  
+  @keyframes gbwalk {
+    0% { background-position:0 }
+    100% { background-position:-624px }
+  }
